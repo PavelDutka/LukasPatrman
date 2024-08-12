@@ -105,6 +105,7 @@ header .logo img {
 .close-nav {
   text-align: right;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 .close-nav button {
   all: unset;
@@ -190,19 +191,32 @@ header .logo img {
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: 50%;
-    /*-webkit-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75); 
--moz-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);*/
+    -webkit-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75); 
+-moz-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 40px 10px rgba(0,0,0,0.75);
 }
 
 
 @media (max-width: 1000px) {
 .header{
-  background-size: 100%;
-}
+  background-size: 70%;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60vh;
 }
 
-@media (max-width: 600px;) {
+.header > img{
+  width: 100%;;
+
+}
+main{
+  margin: 0;
+}
+
+
+}
+
+@media (max-width: 600px) {
   .header{
     height: 600px;
   }
@@ -250,6 +264,33 @@ footer {
     align-items: center;
     flex-wrap: wrap;
 }
+
+@media (max-width: 600px) {
+  footer{
+    display: block;
+    padding-left: 50px;
+  }
+
+  footer .material-symbols-outlined{
+    display: none;
+  }
+
+  .footer--contact a{
+   line-height: 30px !important; 
+  }
+
+  .footer--contact{
+    padding-top: 30px;
+  }
+  footer ul a{
+    line-height: 30px !important;
+  }
+
+  .footer--menu{
+    padding-top: 20px;
+  }
+}
+
 .footer--copyright{
   background-color: var(--main);
   width: 100%;
@@ -264,6 +305,7 @@ footer ul a{
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
+  line-height: 50px;
 }
 footer ul a:hover{
   color: var(--secondary);
@@ -293,10 +335,6 @@ footer ul a:hover{
 }
 
 
-.footer--menu{
-  line-height: 30px;
-}
-
 .footer--menu ul{
   list-style-type: none;
 }
@@ -310,7 +348,7 @@ footer ul a:hover{
   .kdo_jsem{
     margin-top: 100px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
   }
 
@@ -318,13 +356,33 @@ footer ul a:hover{
     font-size: var(--font-size);
     line-height: 150%;
     color: var(--text-dark);
-    width: 650px;
+    width: 48%;
   }
 
   .kdo_jsem > img{
-    width: 600px;
+    width: 48%;
+    height: auto;
+    object-fit: cover;
     border-radius: var(--border);
   }
+
+  @media screen and (max-width: 930px) {
+    .kdo_jsem{
+      flex-wrap: wrap;
+    }
+    .kdo_jsem--content{
+      width: 100%;
+    }
+
+    .kdo_jsem > img{
+      margin-top: 50px;
+      width: 100%;
+    }
+  
+    
+  }
+  
+
 
   .cisla_container{
     background-color: var(--main);
@@ -342,7 +400,6 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   }
 
   .cisla{
-    width: 200px;
     height: 200px;
     display: inline;
     text-align: center;
@@ -397,11 +454,16 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 }
 
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1300px) {
   main {
     margin: 42px;
   }
+  .map_embed{
+    height: 400px;
+  }
+  
 }
+
 
 
 
@@ -448,6 +510,10 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   background-size: 100%;
 }
 
+.sluzby__item--header {
+  text-align: center;
+}
+
 
 
 @media (min-width: 768px) {
@@ -459,7 +525,7 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
       max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
-      text-align: center;
+      
       grid-column-start: 1;
       grid-column-end: 3;
       font-size: var(--font-size);
@@ -491,6 +557,7 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
       flex-direction: column;
       flex: 1;
   }
+  
 }
 
 .dekujeme {
@@ -548,9 +615,10 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 }
 
 .contact-form-container{
-  margin: 150px 0px 150px 0px;
+  margin: 0px 0px 150px 0px;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 
@@ -558,6 +626,18 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   text-align: left;
   margin-bottom: 50px;
 }
+
+
+@media (min-width: 1025px) { 
+  .contact-form-container{
+    margin: 150px 0px 150px 0px;
+  }
+
+  .contact-form{
+    margin-top: 0px;
+  }
+}
+
 
 
 
@@ -569,6 +649,7 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 400px; 
   text-align: center;
+  margin-top: 50px;
 }
 
 .contact-form h2 {
@@ -601,4 +682,13 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   border: 1px solid #ccc;
   font-size: 1em;
   resize: none;
+}
+
+
+.map_embed{
+  width: 80%;
+  height: 600px;
+  border: none;
+  margin-top: 100px;
+  box-shadow: none;
 }
