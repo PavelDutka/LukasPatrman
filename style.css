@@ -194,6 +194,7 @@ header .logo img {
     -webkit-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75); 
 -moz-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 40px 10px rgba(0,0,0,0.75);
+z-index: 5;
 }
 
 
@@ -246,12 +247,24 @@ h2{
 
 body{
     background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
 }
 
 main{
     background-color: var(--background-color);
     margin: 0px 240px 0px 240px;
+    z-index: 1;
+    max-width: 1800px;
+    align-self: center;
 }
+@media (max-width: 1920px){
+  body{
+    display: block;
+  }
+
+}
+
 
 footer {
     height: 250px;
@@ -693,3 +706,26 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   margin-top: 100px;
   box-shadow: none;
 }
+
+
+::-webkit-scrollbar {
+  color: blue;
+  }
+  
+  ::-webkit-scrollbar-track {
+  background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+  background-color: var(--main);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary);
+  cursor: pointer;
+  }
+  
