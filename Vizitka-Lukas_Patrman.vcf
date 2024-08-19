@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Lukáš Patrman
+TITLE:Finanční poradce
+TEL;TYPE=WORK,VOICE:+420777628420
+EMAIL;TYPE=PREF,INTERNET:lukas.patrman@partners.cz
+ADR;TYPE=WORK:;;Zámecká 54/21, Česká Lípa 47001
+URL:lukaspatrman.cz
+END:VCARD
