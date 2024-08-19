@@ -254,7 +254,7 @@ body{
 }
 
 main{
-    background-color: var(--background-color);
+    background-color: transparent;
     margin: 0px 240px 0px 240px;
     z-index: 1;
     max-width: 1800px;
