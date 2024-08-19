@@ -7,6 +7,8 @@
     --font-size: 18px;
     --border: 28px;
     --sluzby-bottom: 50px;
+    --margintop: 200px;
+    --margintopmobile: 100px;
 }
 
 * {
@@ -190,7 +192,7 @@ header .logo img {
     background-image: url(./images/LukasPatrman.png);
     background-repeat: no-repeat;
     background-position: left bottom;
-    background-size: 50%;
+    background-size: 45%;
     -webkit-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75); 
 -moz-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 40px 10px rgba(0,0,0,0.75);
@@ -276,7 +278,7 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 200px;
+    margin-top: var(--margintop);
 }
 
 @media (max-width: 600px) {
@@ -308,9 +310,14 @@ footer {
 .footer--copyright{
   background-color: var(--main);
   width: 100%;
-  height: 100px;
+  height: 70px;
   color: var(--text-light);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  font-size: 13px;
 }
 
 footer ul a{
@@ -360,7 +367,7 @@ footer ul a:hover{
   }
 
   .kdo_jsem{
-    margin-top: 100px;
+    margin-top: var(--margintop);
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -406,7 +413,7 @@ footer ul a:hover{
     -webkit-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
-    margin-top: 200px;
+    margin-top: var(--margintop);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -437,11 +444,17 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   }
 
 
-.video{
+video{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 200px;
+  margin-top: var(--margintop);
+  border-radius: var(--border);
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 }
 
 iframe{
@@ -475,9 +488,32 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   .map_embed{
     height: 400px;
   }
+
+  footer{
+    margin-top: var(--margintopmobile);
+  }
+  .kdo_jsem{
+    margin-top: var(--margintopmobile);
+  }
+  .cisla_container{
+  margin-top: var(--margintopmobile);
+  }
+  video{
+    margin-top: var(--margintopmobile);
+  }
+
   
 }
 
+@media (orientation: landscape) {
+  .header{
+    height: 100vh;
+  }
+  .header > img{
+    width: 50%;
+    align-self: flex-end;
+  }
+}
 
 
 
