@@ -79,14 +79,14 @@
             <a href="https://www.google.com/maps/search/?api=1&query=Z%C3%A1meck%C3%A1%2054/21%20(1.%20p),%C4%8Cesk%C3%A1%20L%C3%ADpa,47001" target="_blank"><span class="material-symbols-outlined">
                 location_on
                 </span>Zámecká 54/21, Česká Lípa 47001</a>
-            <a href="./Vizitka-Lukas_Patrman.vcf" class="button button--dark" style="margin-top: 100px; color: #dcbe8f;" download="contact.vcf">
+            <a href="./Vizitka-Lukas_Patrman.vcf" class="button button--dark" style="margin-top: 100px;" download="contact.vcf">
                     Stáhnout vizitku</a>
         </div>
 
     
         <div class="contact-form">
             <h2>Contact Us</h2>
-            <form id="contact-form" action="https://formspree.io/f/xpwardab" method="POST">
+            <form id="contact-form" method="POST" action="send-email.php">
               <label for="name">
                 <input type="text" id="name" name="name" required placeholder="Jméno a Přijmení*">
               </label>
@@ -96,36 +96,21 @@
               <label for="message">
                 <textarea id="message" name="message" rows="4" required placeholder="Zpráva*"></textarea>
               </label>
-              <button type="button" class="button button--light">Odeslat</button>
+              <button type="submit" class="button button--light">Odeslat</button>
             </form>
           </div>
+          
 
+         
           <iframe title="mapa" class="map_embed"
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2527.889558001554!2d14.538974200000002!3d50.684875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47096954dd55fd57%3A0x2986411ed0db886e!2zWsOhbWVja8OhIDU0LzIxLCA0NzAgMDEgxIxlc2vDoSBMw61wYSAx!5e0!3m2!1sen!2scz!4v1723479993945!5m2!1sen!2scz"
-allowfullscreen="" loading="lazy"
-referrerpolicy="no-referrer-when-downgrade">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2527.889558001554!2d14.538974200000002!3d50.684875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47096954dd55fd57%3A0x2986411ed0db886e!2zWsOhbWVja8OhIDU0LzIxLCA0NzAgMDEgxIxlc2vDoSBMw61wYSAx!5e0!3m2!1sen!2scz!4v1723479993945!5m2!1sen!2scz"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
 
-</iframe>
           
     </div>
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            fetch('https://formspree.io/f/xpwardab', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
-                body: new FormData(this)
-            }).then(response => {
-                if (response.ok) {
-                    window.location.href = './dekujeme.html'; // Redirect URL
-                } else {
-                    alert('Something went wrong. Please try again.');
-                }
-            });
-        });
-    </script>
+    
 
 
 
