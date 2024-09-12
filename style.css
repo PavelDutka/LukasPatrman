@@ -610,7 +610,12 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 
 .sluzby__proc-s-nami{
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .sluzby__proc-s-nami--gallery{
   display: flex;
@@ -882,10 +887,13 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
     cursor: pointer;
   }
 
-  .carousel__item  br{
+  .carousel__item{
     display: block;
-    content: "";
-    margin: 15px 0;
+  }
+  .carousel__item--name{
+    margin-top: 30px;
+    text-align: center;
+    font-style: italic;
   }
   .carousel__item--content{
     margin: 0px;

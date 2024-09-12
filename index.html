@@ -96,74 +96,91 @@
         </section>
 
         <div class="cisla_container autoshow">
-                <div class="cisla">
-                    <span class="material-symbols-outlined">
-                        account_balance
-                        </span>
-                        <div class="counter" data-target="140747262">0</div>
-                        <p>majetek pod správou</p>
-                </div>
-                <div class="cisla">
-                    <span class="material-symbols-outlined">
-                        home
-                        </span>
-                        <div class="counter" data-target="187">0</div>
-                        <p>hypotéky</p>
-                </div>
-                <div class="cisla">
-                    <span class="material-symbols-outlined">
-                        groups
-                        </span>
-                        <div class="counter" data-target="331">0</div>
-                        <p>klienti</p>
-                </div>
-                <div class="cisla">
-                    <span class="material-symbols-outlined">
-                        interactive_space
-                        </span>
-                        <div class="counter" data-target="75">0</div>
-                        <p>aktivní servis</p>
-                </div>
-                <div class="cisla">
-                    <span class="material-symbols-outlined">
-                        work
-                        </span>
-                        <div class="counter" data-target="14">0</div>
-                        <p>let praxe</p>
-                </div>
-
-                <script>
-                    const counters = document.querySelectorAll('.counter');
-    const speed = 500;
-
-    const updateCount = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-
-        const inc = target / speed;
-
-        if (count < target) {
-            counter.innerText = Math.ceil(count + inc);
-            setTimeout(() => updateCount(counter), 1);
-        } else {
-            counter.innerText = target;
-        }
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counterElements = entry.target.querySelectorAll('.counter');
-                counterElements.forEach(counter => updateCount(counter));
-                observer.unobserve(entry.target); // Stop observing once the animation is triggered
-            }
-        });
-    }, { threshold: 0.1 });
-
-    observer.observe(document.querySelector('.cisla_container'));
-                </script>
-           
+            <div class="cisla">
+                <span class="material-symbols-outlined">
+                    account_balance
+                </span>
+                <div class="counter" data-target="140747262" data-suffix=" Kč">0</div>
+                <p>majetek pod správou</p>
+            </div>
+            <div class="cisla">
+                <span class="material-symbols-outlined">
+                    home
+                </span>
+                <div class="counter" data-target="187">0</div>
+                <p>hypotéky</p>
+            </div>
+            <div class="cisla">
+                <span class="material-symbols-outlined">
+                    groups
+                </span>
+                <div class="counter" data-target="331">0</div>
+                <p>klienti</p>
+            </div>
+            <div class="cisla">
+                <span class="material-symbols-outlined">
+                    interactive_space
+                </span>
+                <div class="counter" data-target="75" data-suffix="%">0</div>
+                <p>aktivní servis</p>
+            </div>
+            <div class="cisla">
+                <span class="material-symbols-outlined">
+                    work
+                </span>
+                <div class="counter" data-target="14">0</div>
+                <p>let praxe</p>
+            </div>
+        
+            <script>
+                const counters = document.querySelectorAll('.counter');
+                const duration = 2000; // Total time for the animation to complete (2 seconds)
+                const frameRate = 60; // Frames per second (smooth animation)
+                const totalFrames = Math.round((duration / 1000) * frameRate); // Total number of updates
+        
+                const updateCount = (counter, increment, target, currentFrame) => {
+                    if (currentFrame < totalFrames) {
+                        const newCount = Math.ceil(increment * currentFrame);
+                        // Format the number with spaces every 3 digits
+                        const formattedNumber = newCount.toLocaleString('en').replace(/,/g, ' ');
+                        counter.innerText = counter.hasAttribute('data-suffix') 
+                            ? `${formattedNumber}${counter.getAttribute('data-suffix')}` 
+                            : formattedNumber;
+                        setTimeout(() => updateCount(counter, increment, target, currentFrame + 1), 1000 / frameRate);
+                    } else {
+                        // Ensure the final number is exact and formatted
+                        const formattedNumber = target.toLocaleString('en').replace(/,/g, ' ');
+                        counter.innerText = counter.hasAttribute('data-suffix') 
+                            ? `${formattedNumber}${counter.getAttribute('data-suffix')}` 
+                            : formattedNumber;
+                    }
+                };
+        
+                const startCounting = () => {
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const increment = target / totalFrames; // Each frame's increment is calculated based on total frames
+                        updateCount(counter, increment, target, 0);
+                    });
+                };
+        
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            startCounting();
+                            observer.unobserve(entry.target); // Stop observing once animation starts
+                        }
+                    });
+                }, { threshold: 0.1 });
+        
+                observer.observe(document.querySelector('.cisla_container'));
+            </script>
         </div>
+        
+        
+        
+        
+        
 
         <div class="video autoshow">
             <video controls>
@@ -190,13 +207,13 @@
             <h2>Reference</h2>
             <ul class="carousel__list">
               <li class="carousel__item" data-pos="-1">  „Pana Bc. Lukáše Patrmana znám již několik let. Je naším rodinným finančním poradcem a se vším, co se točí kolem financí a pojištění, se obracíme na něho. Vše je vždy velmi rychle vyřízeno. Těším se na penzi, kterou spolu zajišťujeme.“
-            <br>Pavel Kos, Zákupy
+            <p class="carousel__item--name">Pavel Kos, Zákupy</p>
             </li>
               <li class="carousel__item" data-pos="0">  „Služby od Lukáše Patrmana jsou komplexní. Mám ověřeno, že dokáže vždy nabídnout produkt za výhodných podmínek a k tomu všemu bez zbytečných starostí na straně klienta. Stejně tak následně celé portfolio smluv hlídá, aby nedošlo k expiraci. Jeho služby mohu doporučit.“
-            <br>Milan Prajzler, Haratice
+                <p class="carousel__item--name">Milan Prajzler, Haratice</p>
             </li>
               <li class="carousel__item" data-pos="1">  „Cením si dlouhodobé spolupráce, profesionálního finančního poradenství od A do Z a komplexního porozumění finanční situaci celé rodiny. A vše přitom pohodovou formou.“ <br>
-                Jan Otčenášek, Česká Lípa
+                <p class="carousel__item--name">Jan Otčenášek, Česká Lípa</p>
             </li>
             </ul>
           </div>
