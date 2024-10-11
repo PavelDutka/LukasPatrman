@@ -67,38 +67,63 @@
         </script>
 
     <main>
+        <h1 style="margin-top: 100px;">Kontakt</h1>
+        <div class="contact contact__container">
+           
+            <div class="contact__content">
+                <h2>Lukáš Patrman</h2>
+                <a href="tel:+420777628420"><span class="material-symbols-outlined">
+                    <img src="./Icons/call_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg">
+                    </span>777 628 420</a>
+                <a href="mailto:lukas.patrman@partners.cz"><span class="material-symbols-outlined">
+                    <img src="Icons/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg">
+                    </span>lukas.patrman@partners.cz</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Z%C3%A1meck%C3%A1%2054/21%20(1.%20p),%C4%8Cesk%C3%A1%20L%C3%ADpa,47001" target="_blank"><span class="material-symbols-outlined">
+                    <img src="Icons/location_on_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg">
+                    </span>Zámecká 54/21, Česká Lípa 47001</a>
+                
+                    
+            </div>
+            <div class="contact__content">
+                <h2>Asistentka</h2>
+                <a href="tel:+420777628420"><span class="material-symbols-outlined">
+                    <img src="./Icons/call_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg">
+                    </span>777 628 420</a>
+                <a href="mailto:lukas.patrman@partners.cz"><span class="material-symbols-outlined">
+                    <img src="Icons/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg">
+                    </span>lukas.patrman@partners.cz</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Z%C3%A1meck%C3%A1%2054/21%20(1.%20p),%C4%8Cesk%C3%A1%20L%C3%ADpa,47001" target="_blank"><span class="material-symbols-outlined">
+                    <img src="Icons/location_on_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg">
+                    </span>Zámecká 54/21, Česká Lípa 47001</a>
+            
+                    
+            </div>
+        </div>
+        
+            
         <div class="contact-form-container">
-        <div class="contact">
-            <h1>Kontakt</h1>
-            <a href="tel:+420777628420"><span class="material-symbols-outlined">
-                call
-                </span>777 628 420</a>
-            <a href="mailto:lukas.patrman@partners.cz"><span class="material-symbols-outlined">
-                mail
-                </span>lukas.patrman@partners.cz</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Z%C3%A1meck%C3%A1%2054/21%20(1.%20p),%C4%8Cesk%C3%A1%20L%C3%ADpa,47001" target="_blank"><span class="material-symbols-outlined">
-                location_on
-                </span>Zámecká 54/21, Česká Lípa 47001</a>
-            <a href="./Vizitka-Lukas_Patrman.vcf" class="button button--dark" style="margin-top: 100px;" download="contact.vcf">
-                    Stáhnout vizitku</a>
+            <a href="./Vizitka-Lukas_Patrman.vcf" class="button button--dark" download="contact.vcf">
+                Stáhnout vizitku</a>
+            <div class="contact-form">
+                <h2>Napište nám</h2>
+                <form id="contact-form" method="POST" action="https://formspree.io/f/xpwardab">
+                  <label for="name">
+                    <input type="text" id="name" name="name" required placeholder="Jméno a Přijmení*">
+                  </label>
+                  <label for="email">
+                    <input type="email" id="email" name="email" required placeholder="email*">
+                  </label>
+                  <label for="message">
+                    <textarea id="message" name="message" rows="4" required placeholder="Zpráva*"></textarea>
+                  </label>
+                  <button type="submit" class="button button--light">Odeslat</button>
+                </form>
+              </div>
+              
         </div>
 
     
-        <div class="contact-form">
-            <h2>Napište nám</h2>
-            <form id="contact-form" method="POST" action="https://formspree.io/f/xpwardab">
-              <label for="name">
-                <input type="text" id="name" name="name" required placeholder="Jméno a Přijmení*">
-              </label>
-              <label for="email">
-                <input type="email" id="email" name="email" required placeholder="email*">
-              </label>
-              <label for="message">
-                <textarea id="message" name="message" rows="4" required placeholder="Zpráva*"></textarea>
-              </label>
-              <button type="submit" class="button button--light">Odeslat</button>
-            </form>
-          </div>
+        
           
           
 
@@ -120,13 +145,13 @@
     <footer class="footer">
         <div class="contact footer--contact">
             <a href="tel:+420777628420"><span class="material-symbols-outlined">
-                call
+                <img src="./Icons/call_28dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg">
                 </span>777 628 420</a>
-            <a href="mailto:lukas.patrman@partners.cz"><span class="material-symbols-outlined">
-                mail
+            <a href="mailto:lukas.patrman@partners.cz"><span class="svg_white">
+                <img src="Icons/mail_28dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" >
                 </span>lukas.patrman@partners.cz</a>
             <a href="https://www.google.com/maps/search/?api=1&query=Z%C3%A1meck%C3%A1%2054/21%20(1.%20p),%C4%8Cesk%C3%A1%20L%C3%ADpa,47001" target="_blank"><span class="material-symbols-outlined">
-                location_on
+                <img src="Icons/location_on_28dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg">
                 </span>Zámecká 54/21 (1. p), Česká Lípa 47001</a>
         </div>
 
