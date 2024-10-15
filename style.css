@@ -111,6 +111,14 @@ header .logo img {
   color: var(--text-light);
 }
 
+@media screen and (max-width: 768px) {
+  .navbar ul .a--dark {
+    color: var(--text-light);
+  
+  }
+}
+
+
 .navbar ul a:hover {
   color: var(--secondary);
 }
