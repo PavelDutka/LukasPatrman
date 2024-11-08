@@ -5,7 +5,7 @@
     --text-dark: black;
     --text-light: white;
     --font-size: 18px;
-    --border: 28px;
+    --border: 16px;
     --sluzby-bottom: 50px;
     --margintop: 200px;
     --margintopmobile: 100px;
@@ -591,41 +591,35 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   min-height: 10em;
   background-image: unset;
   background-repeat: no-repeat;
-  background-size: cover;  
+  background-size: cover !important;  
 }
 
 .sluzby__item--img-investice::before {
-  background-image: url();
+  background-image: url(./images/IMG_1047.avif);
   background-position: center;
 }
 
 
 .sluzby__item--img-hypoteka::before {
-  background: url();
+  background: url(./images/IMG_1057.avif);
   background-position: center;
 }
 
 .sluzby__item--img-zivotni::before {
-  background: url();
+  background: url(./images/IMG_1036.avif);
   background-position: center;
 }
 
 .sluzby__item--img-nezivotni::before {
-  background: url();
+  background: url(./images/IMG_1089.avif);
   background-position: center;
 }
 
 .sluzby__item--img-penze::before {
-  background: url();
+  background: url(./images/IMG_1139.avif);
   background-position: center;
 }
 
-.sluzby__item--img-proc::before {
-  background: url();
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
 
 .sluzby__item--header {
   text-align: center;
@@ -646,14 +640,14 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   justify-content: center;
   align-items: center;
   gap: 2em;
-  padding: 1em;
 }
 
 .sluzby__proc-s-nami img{
-  height: 500px;
-  width: 300px;
+  width: 100%;
+  height: auto;
   background-color: black;
   border-radius: var(--border);
+  margin-top: 20px;
 }
 
 
@@ -764,9 +758,10 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
   overflow: hidden;
   justify-content: flex-end;
   border-radius: var(--border);
-  background-image: url(./images/DSC_3850.JPG);
-  background-size: auto 100%;
+  background-image: url(./images/IMG_0919.avif);
+  background-size: 50% auto;
   background-repeat: no-repeat;
+  background-position: 0% 30%;
 }
 
 .contact-form-container > a {
@@ -777,6 +772,15 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 
 .svg_white{
   color: white;
+}
+
+
+.contact__img{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  float: right;
 }
 
 .contact-form-container h1{
