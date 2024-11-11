@@ -351,6 +351,8 @@ footer {
   .footer--menu{
     padding-top: 20px;
   }
+
+  
 }
 
 .footer--copyright{
@@ -388,7 +390,8 @@ footer ul a:hover{
 }
 
 .contact__content{
-  width: 300px;
+  width: 350px;  
+  margin-bottom: 0px;
 }
 
 .contact__container{
@@ -455,6 +458,10 @@ footer ul a:hover{
     .kdo_jsem > img{
       margin-top: 50px;
       width: 100%;
+    }
+
+    .contact__content{
+      margin-bottom: 100px;
     }
     
     
@@ -611,12 +618,12 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 }
 
 .sluzby__item--img-nezivotni::before {
-  background: url(./images/IMG_1089.avif);
+  background: url(./images/IMG_1139.avif);
   background-position: center;
 }
 
 .sluzby__item--img-penze::before {
-  background: url(./images/IMG_1139.avif);
+  background: url(./images/IMG_1089.avif);
   background-position: center;
 }
 
@@ -777,10 +784,16 @@ box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
 
 .contact__img{
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
-  float: right;
+  position: relative;
+  right: 70px;
+  top: 100px;
+}
+
+.img_asistentka{
+  right: 10px;
 }
 
 .contact-form-container h1{
