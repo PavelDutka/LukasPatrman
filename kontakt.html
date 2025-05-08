@@ -69,7 +69,7 @@
         <div class="contact contact__container">
            
             <div class="contact__content">
-                <h2>Bc. Lukáš Patrman, EFA
+                <h2 class="h2_small">Bc. Lukáš Patrman, EFA
                     <img class="contact__img img_patrman" src="./images/DSC_3815.JPG" alt="Asistentka">
                 </h2>
                 <a href="tel:+420777628420"><span class="material-symbols-outlined">
@@ -89,12 +89,12 @@
                     <img class="contact__img img_asistentka" src="./images/asistentka.jpg" alt="Asistentka">
                 </h2>
                 
-                <a href="tel:+420777628420"><span class="material-symbols-outlined">
+                <a href="tel:+420607757083"><span class="material-symbols-outlined">
                     <img src="./Icons/call_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="mobil">
-                    </span>777 628 420</a>
-                <a href="mailto:lukas.patrman@partners.cz"><span class="material-symbols-outlined">
+                    </span>607 757 083</a>
+                <a href="mailto:klara.vlastnikova@partners.cz"><span class="material-symbols-outlined">
                     <img src="Icons/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="mail">
-                    </span>lukas.patrman@partners.cz</a>
+                    </span>klara.vlastnikova@partners.cz </a>
                 <a href="https://www.google.com/maps/search/?api=1&query=Z%C3%A1meck%C3%A1%2054/21%20(1.%20p),%C4%8Cesk%C3%A1%20L%C3%ADpa,47001" target="_blank"><span class="material-symbols-outlined">
                     <img src="Icons/location_on_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="adresa">
                     </span>Zámecká 54/21, Česká Lípa</a>
@@ -109,21 +109,22 @@
                 Stáhnout vizitku</a>
             <div class="contact-form">
                 <h2>Napište nám</h2>
-                <form id="contact-form" method="POST" action="https://formspree.io/f/xpwardab">
-                  <label for="name">
-                    <input type="text" id="name" name="name" required placeholder="Jméno a Přijmení*">
-                  </label>
-                  <label for="email">
-                    <input type="email" id="email" name="email" required placeholder="email*">
-                  </label>
-                  <label for="message">
-                    <textarea id="message" name="message" rows="4" required placeholder="Zpráva*"></textarea>
-                  </label>
-                  <button type="submit" class="button button--light">Odeslat</button>
+                <form id="contact-form" method="POST" action="sendEmail.php">
+                    <label for="name">
+                        <input type="text" id="name" name="name" required placeholder="Jméno a Přijmení*">
+                    </label>
+                    <label for="email">
+                        <input type="email" id="email" name="email" required placeholder="email*">
+                    </label>
+                    <label for="message">
+                        <textarea id="message" name="message" rows="4" required placeholder="Zpráva*"></textarea>
+                    </label>
+                    <p>Po vyplnění formuláře se Vám ozveme co nejdříve. <a href="./Zpracovani-osobnich-udaju.pdf">Přečtěte si více</a></p>
+                    <button type="submit" class="button button--light">Odeslat</button>
                 </form>
-              </div>
-              
+            </div>
         </div>
+        
 
     
         
@@ -174,7 +175,11 @@
     </footer>
     <div class="footer--copyright">
             <p>Lukáš Patrman © 2024. Všechna práva vyhrazena.</p>
-            <p>web by Pavel Dutka</p>
+            <p>Používáme cookies k analýze návštěvnosti. Pro více informací nás <a href="./kontakt.html">kontaktujte.</a></p>
+            <p>web by <a href="https://paveldutka.com">Pavel Dutka</a> </p>
+            <p class="footer--text"><br>Činnost vázaného zástupce pro oblast pojištění, investic a DPS provádí jménem a na účet Partners Financial Services, a.s. a zápis do registru lze zkontrolovat na  <a href="https://www.cnb.cz">www.cnb.cz</a> v sekci „Seznam regulovaných a registrovaných subjektů“</p>
+            <p class="footer--text">Činnost vázaného zástupce pro oblast úvěrů provádí jménem a na účet GEPARD FINANCE a.s. a zápis do registru lze zkontrolovat na <a href="https://www.cnb.cz">www.cnb.cz</a> v sekci „Seznam regulovaných a registrovaných subjektů“</p>
+    
     </div>
 </body>
 </html>
