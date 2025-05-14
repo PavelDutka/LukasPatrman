@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přihlásit se na prezentaci - Lukáš Patrman</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./images/logo.ico">
+    <link rel="icon" href="./images/logo.ico">
+    <meta name="description" content="Služby Lukáše Patrmana">
+
+</head>
+<body>
+        <header class="header--white">
+            <div class="wrapper">
+                <div class="navbar">
+                    <div class="close-nav"><button aria-label="menu">×</button></div>
+                    <nav>
+                        <ul>
+                            <li><a class="a--dark" href="./index.html">domů</a></li>
+                            <li><a class="a--dark" href="./sluzby.html">Naše služby</a></li>
+                            
+                            <li><a class="a--dark" href="./kontakt.html">kontakt</a></li>
+                        </ul>
+                    </nav>
+                    <a href="./prihlaseni.html" class="button button--dark presentation-btn">Přihlásit se na prezentaci</a>
+                </div>
+                <div class="menu-bar">
+                    <button aria-label="menu"><i></i></button>
+                </div>
+            </div>
+            
+        </header>
+        <script>
+            const theBody = document.querySelector('body');
+        const openNav = document.querySelector('.menu-bar button');
+        const closeNav = document.querySelector('.close-nav button');
+        const Navbar = document.querySelector('.navbar');
+        const menuItems = document.querySelectorAll('li a');
+        const isMobile = window.innerWidth <= 600;
+        
+        function bodyScroll() {
+            if (Navbar.classList.contains('show')) {
+                theBody.classList.add('hide-scroll');
+            } else if (theBody.classList.contains('hide-scroll')) {
+                theBody.classList.remove('hide-scroll');
+            }
+        }
+        
+        function showHide() {
+            Navbar.classList.toggle('show');
+            bodyScroll();
+        }
+        
+        openNav.onclick = showHide;
+        closeNav.onclick = showHide;
+        
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (isMobile) {
+                    showHide();
+                }
+            });
+        });
+
+        // Přidávání dalších jmen
+  function pridatOsobu() {
+    const container = document.getElementById('osoby-container');
+    const novaOsoba = document.createElement('div');
+    novaOsoba.className = 'osoba';
+    novaOsoba.innerHTML = `
+  <div style="display: flex; gap: 10px; align-items: center;">
+    <input type="text" name="jmeno[]" placeholder="Jméno a příjmení" required style="flex: 1;">
+    <button type="button" class="remove-btn" onclick="odebratOsobu(this)">×</button>
+  </div>
+`;
+
+    container.appendChild(novaOsoba);
+  }
+
+  // Po odeslání formuláře zobrazit zprávu
+  document.getElementById('formular').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('potvrzeni').textContent = "Děkujeme za přihlášení, těšíme se na vás!";
+    this.reset();
+  });
+
+  function odebratOsobu(button) {
+  const osobaDiv = button.closest('.osoba');
+  if (osobaDiv) {
+    osobaDiv.remove();
+  }
+}
+
+
+        
+        </script>
+
+    <main>
+        <h1 style="margin-top: 100px;">Přihlásit se na prezentaci</h1>
+        <section class="autoshow">      
+              <form id="formular" class="contact-form" style="margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <div id="osoby-container">
+                    <div class="osoba" style="margin-bottom: 20px;">
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                          <input type="text" name="jmeno[]" placeholder="Jméno a příjmení" required style="flex: 1;">
+                        </div>
+                      </div>
+                      
+                </div>
+              
+                <button type="button" class="button button--light" onclick="pridatOsobu()">+ Přidat další osobu</button>
+                <br><br>
+                <button type="submit" class="button button--dark">Odeslat</button>
+                <p id="potvrzeni" style="margin-top: 30px; font-weight: bold; color: var(--secondary); font-size: 20px;"></p>
+              </form>
+              
+      
+              <p id="potvrzeni" style="margin-top: 20px; font-weight: bold; color: green;"></p>
+            </div>
+          </section>
+
+          
+    </div>
+    
+
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="contact footer--contact">
+            <a href="tel:+420777628420"><span class="material-symbols-outlined">
+                <img src="./Icons/call_28dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg">
+                </span>777 628 420</a>
+            <a href="mailto:lukas.patrman@partners.cz"><span class="material-symbols-outlined">
+                <img src="Icons/mail_28dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg">
+                </span>lukas.patrman@partners.cz</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Z%C3%A1meck%C3%A1%2054/21%20(1.%20p),%C4%8Cesk%C3%A1%20L%C3%ADpa,47001" target="_blank"><span class="material-symbols-outlined">
+                <img src="Icons/location_on_28dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg">
+                </span>Zámecká 54/21 (1. p), Česká Lípa 47001</a>
+        </div>
+
+        
+
+        <div class="footer--menu">
+            <nav>
+                <ul>
+                    <li><a href="./index.html">domů</a></li>
+                    <li><a href="./sluzby.html">Naše služby</a></li>
+                    
+                    <li><a href="./kontakt.html">kontakt</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+        
+    </footer>
+    <div class="footer--copyright">
+            <p>Lukáš Patrman © 2024. Všechna práva vyhrazena.</p>
+            <p>Používáme cookies k analýze návštěvnosti. Pro více informací nás <a href="./kontakt.html">kontaktujte.</a></p>
+            <p>web by <a href="https://paveldutka.com">Pavel Dutka</a> </p>
+            <p class="footer--text"><br>Činnost vázaného zástupce pro oblast pojištění, investic a DPS provádí jménem a na účet Partners Financial Services, a.s. a zápis do registru lze zkontrolovat na  <a href="https://www.cnb.cz">www.cnb.cz</a> v sekci „Seznam regulovaných a registrovaných subjektů“</p>
+            <p class="footer--text">Činnost vázaného zástupce pro oblast úvěrů provádí jménem a na účet GEPARD FINANCE a.s. a zápis do registru lze zkontrolovat na <a href="https://www.cnb.cz">www.cnb.cz</a> v sekci „Seznam regulovaných a registrovaných subjektů“</p>
+    
+    </div>
+    
+</body>
+</html>
