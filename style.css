@@ -94,6 +94,7 @@ font-weight: bold;
 font-size: 28px;
 font-weight: 200;
 transition: 0.5s;
+white-space: nowrap;
 }
 
 .navbar ul .a--dark {
