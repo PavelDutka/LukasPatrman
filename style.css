@@ -1101,3 +1101,41 @@ vertical-align: middle;
 .remove-btn:hover {
   color: var(--secondary);
 }
+
+/* Style for the person input container */
+.osoba > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Style for the person name input */
+.osoba input[name="jmeno[]"] {
+  flex: 3;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+/* Style for the remove button */
+.remove-btn {
+  margin-left: 10px;
+  background-color: #ceb287;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.remove-btn:hover {
+  background-color: #c0392b;
+}

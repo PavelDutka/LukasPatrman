@@ -69,9 +69,9 @@
     const novaOsoba = document.createElement('div');
     novaOsoba.className = 'osoba';
     novaOsoba.innerHTML = `
-  <div style="display: flex; gap: 10px; align-items: center;">
+  <div style="display: flex; gap: 10px; align-items: center; justify-content: space-between;">
     <input type="text" name="jmeno[]" placeholder="Jméno a příjmení" required style="flex: 1;">
-    <button type="button" class="remove-btn" onclick="odebratOsobu(this)">×</button>
+    <button type="button" class="remove-btn" onclick="odebratOsobu(this)" style="margin-left: 10px;">-</button>
   </div>
 `;
 
@@ -80,7 +80,7 @@
 
   // Po odeslání formuláře zobrazit zprávu
   document.getElementById('formular').addEventListener('submit', function (e) {
-    e.preventDefault();
+   // e.preventDefault();
     document.getElementById('potvrzeni').textContent = "Děkujeme za přihlášení, těšíme se na vás!";
     this.reset();
   });
@@ -99,7 +99,7 @@
     <main>
         <h1 style="margin-top: 100px;">Přihlásit se na prezentaci</h1>
         <section class="autoshow">      
-              <form id="formular" class="contact-form" style="margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+              <form id="formular" class="contact-form" method="POST" action="ulozit.php" style="margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
                 <div id="osoby-container">
                     <div class="osoba" style="margin-bottom: 20px;">
                         <div style="display: flex; gap: 10px; align-items: center;">
@@ -109,14 +109,14 @@
                       
                 </div>
               
-                <button type="button" class="button button--light" onclick="pridatOsobu()">+ Přidat další osobu</button>
+                <button type="button" style="margin-top: 20px;" class="button button--light" onclick="pridatOsobu()">+ Přidat další osobu</button>
                 <br><br>
                 <button type="submit" class="button button--dark">Odeslat</button>
-                <p id="potvrzeni" style="margin-top: 30px; font-weight: bold; color: var(--secondary); font-size: 20px;"></p>
+                <p id="potvrzeni" style="font-weight: bold; color: var(--secondary); font-size: 20px;"></p>
               </form>
               
       
-              <p id="potvrzeni" style="margin-top: 20px; font-weight: bold; color: green;"></p>
+              <p id="potvrzeni" style="font-weight: bold; color: green;"></p>
             </div>
           </section>
 
