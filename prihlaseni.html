@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zlatý plán - Lukáš Patrman</title>
+    <title>Přihlásit se na prezentaci - Lukáš Patrman</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/x-icon" href="./images/logo.ico">
     <link rel="icon" href="./images/logo.ico">
@@ -23,7 +23,7 @@
                             <li><a class="a--dark" href="./kontakt.html">kontakt</a></li>
                         </ul>
                     </nav>
-                    <a href="./prihlaseni.html" class="button button--dark presentation-btn">Zlatý plán</a>
+                    <a href="./prihlaseni.html" class="button button--dark presentation-btn">Přihlásit se na prezentaci</a>
                 </div>
                 <div class="menu-bar">
                     <button aria-label="menu"><i></i></button>
@@ -106,38 +106,22 @@
         </script>
 
     <main>
-<h1 style="margin-top: 100px;">Zlatý plán</h1>
-<h2 style="color: var(--main); margin-bottom: 20px; text-align: center;">Zlatý plán - První český dokument o finanční gramotnosti</h2>
-        <section class="autoshow">      
-              <form id="formular" class="contact-form" method="POST" action="ulozit.php" style="margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-               <h2>Přihlásit se na dokument Zlatý plán</h2>
-                <div id="osoby-container">
-                    <div class="osoba" style="margin-bottom: 20px;">
-                        <div style="display: flex; gap: 10px; align-items: center;">
-                          <input type="text" name="jmeno[]" placeholder="Jméno a příjmení" required style="flex: 1;">
-                        </div>
-                      </div>
-                      
-                </div>
-              
-                <p id="person-counter" style="text-align: center; padding: 0; height: 0; margin: 20px 0; color: var(--main); font-weight: bold;">Počet osob: 1/5</p>
-                <button type="button" class="button button--light" onclick="pridatOsobu()">+ Přidat další osobu</button>
-                <br><br>
-                <button type="submit" class="button button--dark">Odeslat</button>
-                <p id="potvrzeni" style="font-weight: bold; color: var(--secondary); font-size: 20px;"></p>
-              </form>
-              
-      
-              <p id="potvrzeni" style="font-weight: bold; color: green;"></p>
-            </div>
-          </section>
-          
-        
+        <h1 style="margin-top: 100px;">Přihlásit se na prezentaci</h1>
         
         <section class="event-info autoshow" style="max-width: 800px; margin: 40px auto; text-align: center;">
-            
+            <h2 style="color: var(--main); margin-bottom: 20px;">Zlatý plán - První český dokument o finanční gramotnosti</h2>
             <p style="font-size: 18px; line-height: 1.6;">
-                
+                <section class="video-section autoshow" style="max-width: 800px; margin: 40px auto;">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--border);">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                            src="https://www.youtube.com/embed/rhIq5AeZSw4" 
+                            title="Zlatý plán - Trailer"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
                 Dovolte mi Vás osobně pozvat na dokument Zlatý plán, první český dokument o finanční gramotnosti, 
                 který otevírá v české společnosti jedno z nejdůležitějších témat: jak si vybudovat finanční jistotu a svobodnou budoucnost.
             </p>
@@ -162,22 +146,32 @@
                 Při této příležitosti mi dovolte pozvat i Vaši rodinu, kamarády, přátele a známé, 
                 o kterých víte, že by dokument rádi viděli nebo je jen také chcete pozvat a sejít se s dobrou náladou a zdarma v kině.
             </p>
-            <section class="video-section autoshow" style="max-width: 800px; margin: 40px auto;">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--border);">
-                        <iframe 
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                            src="https://www.youtube.com/embed/rhIq5AeZSw4" 
-                            title="Zlatý plán - Trailer"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </section>
         </section>
 
         
 
-        
+        <section class="autoshow">      
+              <form id="formular" class="contact-form" method="POST" action="ulozit.php" style="margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div id="osoby-container">
+                    <div class="osoba" style="margin-bottom: 20px;">
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                          <input type="text" name="jmeno[]" placeholder="Jméno a příjmení" required style="flex: 1;">
+                        </div>
+                      </div>
+                      
+                </div>
+              
+                <p id="person-counter" style="text-align: center; padding: 0; height: 0; margin: 20px 0; color: var(--main); font-weight: bold;">Počet osob: 1/5</p>
+                <button type="button" class="button button--light" onclick="pridatOsobu()">+ Přidat další osobu</button>
+                <br><br>
+                <button type="submit" class="button button--dark">Odeslat</button>
+                <p id="potvrzeni" style="font-weight: bold; color: var(--secondary); font-size: 20px;"></p>
+              </form>
+              
+      
+              <p id="potvrzeni" style="font-weight: bold; color: green;"></p>
+            </div>
+          </section>
 
           
     </div>
