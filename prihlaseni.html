@@ -33,73 +33,125 @@
         </header>
         <script>
             const theBody = document.querySelector('body');
-        const openNav = document.querySelector('.menu-bar button');
-        const closeNav = document.querySelector('.close-nav button');
-        const Navbar = document.querySelector('.navbar');
-        const menuItems = document.querySelectorAll('li a');
-        const isMobile = window.innerWidth <= 600;
-        
-        function bodyScroll() {
-            if (Navbar.classList.contains('show')) {
-                theBody.classList.add('hide-scroll');
-            } else if (theBody.classList.contains('hide-scroll')) {
-                theBody.classList.remove('hide-scroll');
-            }
-        }
-        
-        function showHide() {
-            Navbar.classList.toggle('show');
-            bodyScroll();
-        }
-        
-        openNav.onclick = showHide;
-        closeNav.onclick = showHide;
-        
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                if (isMobile) {
-                    showHide();
+            const openNav = document.querySelector('.menu-bar button');
+            const closeNav = document.querySelector('.close-nav button');
+            const Navbar = document.querySelector('.navbar');
+            const menuItems = document.querySelectorAll('li a');
+            const isMobile = window.innerWidth <= 600;
+            
+            function bodyScroll() {
+                if (Navbar.classList.contains('show')) {
+                    theBody.classList.add('hide-scroll');
+                } else if (theBody.classList.contains('hide-scroll')) {
+                    theBody.classList.remove('hide-scroll');
                 }
+            }
+            
+            function showHide() {
+                Navbar.classList.toggle('show');
+                bodyScroll();
+            }
+            
+            openNav.onclick = showHide;
+            closeNav.onclick = showHide;
+            
+            menuItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    if (isMobile) {
+                        showHide();
+                    }
+                });
             });
-        });
 
-        // Přidávání dalších jmen
-  function pridatOsobu() {
-    const container = document.getElementById('osoby-container');
-    const novaOsoba = document.createElement('div');
-    novaOsoba.className = 'osoba';
-    novaOsoba.innerHTML = `
-  <div style="display: flex; gap: 10px; align-items: center; justify-content: space-between;">
-    <input type="text" name="jmeno[]" placeholder="Jméno a příjmení" required style="flex: 1;">
-    <button type="button" class="remove-btn" onclick="odebratOsobu(this)" style="margin-left: 10px;">-</button>
-  </div>
-`;
+            // Přidávání dalších jmen
+            function pridatOsobu() {
+                const container = document.getElementById('osoby-container');
+                const osoby = container.getElementsByClassName('osoba');
+                
+                if (osoby.length >= 5) {
+                    alert('Maximální počet osob je 5');
+                    return;
+                }
 
-    container.appendChild(novaOsoba);
-  }
+                const novaOsoba = document.createElement('div');
+                novaOsoba.className = 'osoba';
+                novaOsoba.innerHTML = `
+                    <div style="display: flex; gap: 10px; align-items: center; justify-content: space-between;">
+                        <input type="text" name="jmeno[]" placeholder="Jméno a příjmení" required style="flex: 1;">
+                        <button type="button" class="remove-btn" onclick="odebratOsobu(this)" style="margin-left: 10px;">-</button>
+                    </div>
+                `;
 
-  // Po odeslání formuláře zobrazit zprávu
-  document.getElementById('formular').addEventListener('submit', function (e) {
-   // e.preventDefault();
-    document.getElementById('potvrzeni').textContent = "Děkujeme za přihlášení, těšíme se na vás!";
-    this.reset();
-  });
+                container.appendChild(novaOsoba);
+                updateCounter();
+            }
 
-  function odebratOsobu(button) {
-  const osobaDiv = button.closest('.osoba');
-  if (osobaDiv) {
-    osobaDiv.remove();
-  }
-}
+            function updateCounter() {
+                const container = document.getElementById('osoby-container');
+                const osoby = container.getElementsByClassName('osoba');
+                const counter = document.getElementById('person-counter');
+                counter.textContent = `Počet osob: ${osoby.length}/5`;
+            }
 
+            function odebratOsobu(button) {
+                const osobaDiv = button.closest('.osoba');
+                if (osobaDiv) {
+                    osobaDiv.remove();
+                    updateCounter();
+                }
+            }
 
-        
+            // Initialize counter when page loads
+            document.addEventListener('DOMContentLoaded', updateCounter);
         </script>
 
     <main>
         <h1 style="margin-top: 100px;">Přihlásit se na prezentaci</h1>
+        
+        <section class="event-info autoshow" style="max-width: 800px; margin: 40px auto; text-align: center;">
+            <h2 style="color: var(--main); margin-bottom: 20px;">Zlatý plán - První český dokument o finanční gramotnosti</h2>
+            <p style="font-size: 18px; line-height: 1.6;">
+                <section class="video-section autoshow" style="max-width: 800px; margin: 40px auto;">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--border);">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                            src="https://www.youtube.com/embed/rhIq5AeZSw4" 
+                            title="Zlatý plán - Trailer"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+                Dovolte mi Vás osobně pozvat na dokument Zlatý plán, první český dokument o finanční gramotnosti, 
+                který otevírá v české společnosti jedno z nejdůležitějších témat: jak si vybudovat finanční jistotu a svobodnou budoucnost.
+            </p>
+            
+            <div style="background-color: var(--main); color: var(--text-light); padding: 30px; border-radius: var(--border); margin: 30px 0;">
+                <h3 style="color: var(--secondary); margin-bottom: 15px;">Kdy a kde?</h3>
+                <p style="font-size: 20px; margin-bottom: 10px;">Úterý 17. června 2025 od 20:00 hod.</p>
+                <p style="font-size: 20px;">Kino Crystal v České Lípě</p>
+            </div>
+
+            <div style="margin: 30px 0;">
+                <h3 style="color: var(--main); margin-bottom: 15px;">Co Vás čeká?</h3>
+                <ul style="list-style: none; font-size: 18px; line-height: 1.8;">
+                    <li>✓ Welcome drink</li>
+                    <li>✓ Pořádná porce popcornu</li>
+                    <li>✓ Skvělá zábava</li>
+                    <li>✓ Spousta užitečných informací</li>
+                </ul>
+            </div>
+
+            <p style="font-size: 18px; line-height: 1.6; margin-bottom: 40px;">
+                Při této příležitosti mi dovolte pozvat i Vaši rodinu, kamarády, přátele a známé, 
+                o kterých víte, že by dokument rádi viděli nebo je jen také chcete pozvat a sejít se s dobrou náladou a zdarma v kině.
+            </p>
+        </section>
+
+        
+
         <section class="autoshow">      
-              <form id="formular" class="contact-form" method="POST" action="ulozit.php" style="margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+              <form id="formular" class="contact-form" method="POST" action="ulozit.php" style="margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
                 <div id="osoby-container">
                     <div class="osoba" style="margin-bottom: 20px;">
                         <div style="display: flex; gap: 10px; align-items: center;">
@@ -109,7 +161,8 @@
                       
                 </div>
               
-                <button type="button" style="margin-top: 20px;" class="button button--light" onclick="pridatOsobu()">+ Přidat další osobu</button>
+                <p id="person-counter" style="text-align: center; padding: 0; height: 0; margin: 20px 0; color: var(--main); font-weight: bold;">Počet osob: 1/5</p>
+                <button type="button" class="button button--light" onclick="pridatOsobu()">+ Přidat další osobu</button>
                 <br><br>
                 <button type="submit" class="button button--dark">Odeslat</button>
                 <p id="potvrzeni" style="font-weight: bold; color: var(--secondary); font-size: 20px;"></p>
@@ -160,8 +213,8 @@
             <p>Lukáš Patrman © 2024. Všechna práva vyhrazena.</p>
             <p>Používáme cookies k analýze návštěvnosti. Pro více informací nás <a href="./kontakt.html">kontaktujte.</a></p>
             <p>web by <a href="https://paveldutka.com">Pavel Dutka</a> </p>
-            <p class="footer--text"><br>Činnost vázaného zástupce pro oblast pojištění, investic a DPS provádí jménem a na účet Partners Financial Services, a.s. a zápis do registru lze zkontrolovat na  <a href="https://www.cnb.cz">www.cnb.cz</a> v sekci „Seznam regulovaných a registrovaných subjektů“</p>
-            <p class="footer--text">Činnost vázaného zástupce pro oblast úvěrů provádí jménem a na účet GEPARD FINANCE a.s. a zápis do registru lze zkontrolovat na <a href="https://www.cnb.cz">www.cnb.cz</a> v sekci „Seznam regulovaných a registrovaných subjektů“</p>
+            <p class="footer--text"><br>Činnost vázaného zástupce pro oblast pojištění, investic a DPS provádí jménem a na účet Partners Financial Services, a.s. a zápis do registru lze zkontrolovat na  <a href="https://www.cnb.cz">www.cnb.cz</a> v sekci "Seznam regulovaných a registrovaných subjektů"</p>
+            <p class="footer--text">Činnost vázaného zástupce pro oblast úvěrů provádí jménem a na účet GEPARD FINANCE a.s. a zápis do registru lze zkontrolovat na <a href="https://www.cnb.cz">www.cnb.cz</a> v sekci "Seznam regulovaných a registrovaných subjektů"</p>
     
     </div>
     
